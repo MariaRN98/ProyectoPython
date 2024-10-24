@@ -1,0 +1,16 @@
+Crea un sistema básico de CRUD
+
+Requisitos:
+
+1. Base de datos: El sistema debe utilizar una base de datos para almacenar información sobre los libros, como título, autor, ISBN, género, etc. Se recomienda el uso de SQLite dada su simplicidad, aunque se permite el uso de alternativas como PostgreSQL o MySQL.
+
+
+2. Interfaz de usuario: El sistema debe tener una interfaz de usuario simple que permite las operaciones típicas de un CRUD: Create, Read, Update, Delete. Opcional: se valorará positivamente el uso de alguna interfaz visual tipo PyQT5 y similares.
+
+3. Funcionalidad adicional: El sistema debe permitir generar un listado. Se valora que se exporte a un formato legible como CSV.
+
+4. Documentación: Debes proporcionar documentación clara y concisa que explique cómo funciona el sistema, cómo se ejecuta y cómo se pueden utilizar sus características.
+
+5. Control de versiones y entorno virtual: Se debe utilizar un sistema de control de versiones, como Git, para realizar un seguimiento de las actualizaciones del código y colaborar en el desarrollo si se trabaja en grupo. Además deberá estar ubicado en un entorno virtual.
+
+6. Presentación: Al final del proyecto, el alumnado debe presentar su aplicación y su funcionamiento ante el grupo y el profesor, destacando las características implementadas y los problemas superados.
