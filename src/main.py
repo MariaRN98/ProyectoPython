@@ -1,6 +1,15 @@
 import json
 import requests
-import amiibo
+from amiibo import Amiibo
+
+# Descargar el archivo JSON y cargarlo como una lista de instancias de Amiibo
+url = "https://raw.githubusercontent.com/matthewlyons/amiibo-database/master/db/amiibo.json"
+response = requests.get(url)
+data = response.json()
+
+# Crear una lista de objetos Amiibo
+amiibos = [Amiibo(item['amiiboSeries'], item['character'], item['gameSeries'], 
+                  item['name'], item['image'], item['type']) for item in data]
 
 columna = ""
 busqueda = ""
@@ -37,8 +46,27 @@ while True:
             columna = "type"
         elif seleccionCat == 0:
             print("salir") #que salga de la seleccion de categoria y vuelva al menu
-        busqueda = input("¿Que desea buscar?")
+            break
+        busqueda = input("¿Que desea buscar?" )
+        resultado = Amiibo.buscar_por_atributo(amiibos, columna, busqueda)
+        for amiibo in resultado:
+            print(amiibo)
 
+    elif seleccion == 0:
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+"""
         # Descargar el archivo JSON desde la URL cruda de GitHub
         url = "https://raw.githubusercontent.com/matthewlyons/amiibo-database/refs/heads/master/db/amiibo.json"
         response = requests.get(url)
@@ -57,7 +85,7 @@ while True:
         else:
             print(f"Error al descargar el archivo: {response.status_code}")
 
-
+"""
 
 
 

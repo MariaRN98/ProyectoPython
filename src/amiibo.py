@@ -9,9 +9,17 @@ class Amiibo():
         self.type = amiibo_type
 
     def __str__(self):
-        return (f"Amiibo: {self.name}\n"
-                f"Character: {self.character}\n"
-                f"Amiibo Series: {self.amiiboSeries}\n"
-                f"Game Series: {self.gameSeries}\n"
-                f"Type: {self.type}\n"
+        return (f"Nombre: {self.name}\n"
+                f"Personaje: {self.character}\n"
+                f"Serie de Amiibo: {self.amiiboSeries}\n"
+                f"Videojuego: {self.gameSeries}\n"
+                f"Tipo: {self.type}\n"
                 f"Image URL: {self.image}\n")
+    
+    # Función para buscar en diferentes atributos de la clase
+    @classmethod
+    def buscar_por_atributo(cls, amiibos, atributo, valor):
+    # Verificar si el atributo es válido
+        # Filtrar los amiibos donde el valor del atributo coincide con el valor dado
+        resultado = [amiibo for amiibo in amiibos if getattr(amiibo, atributo, None) == valor]
+        return resultado
